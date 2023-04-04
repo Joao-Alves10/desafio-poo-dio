@@ -7,6 +7,13 @@ public class Dev {
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
+    private Forum topicos;
+
+    public double calcularXpForum(Forum qtdInteracoes){
+        this.topicos = qtdInteracoes;
+        return topicos.calcularXp();
+    }
+
     public void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
         bootcamp.getDevsInscritos().add(this);
@@ -74,4 +81,5 @@ public class Dev {
     public int hashCode() {
         return Objects.hash(nome, conteudosInscritos, conteudosConcluidos);
     }
+
 }

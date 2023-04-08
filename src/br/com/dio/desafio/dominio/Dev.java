@@ -9,9 +9,17 @@ public class Dev {
 
     private Forum topicos;
 
-    public double calcularXpForum(Forum qtdInteracoes){
-        this.topicos = qtdInteracoes;
-        return topicos.calcularXp();
+    public Forum getTopicos() {
+        return topicos;
+    }
+
+    public void setTopicos(Forum topicos) {
+        this.topicos = topicos;
+    }
+
+    public double calcularXpForum(){
+       return this.topicos.calcularXp();
+
     }
 
     public void inscreverBootcamp(Bootcamp bootcamp){
@@ -36,7 +44,8 @@ public class Dev {
             double next = iterator.next().calcularXp();
             soma += next;
         }
-        return soma;
+        double xpForum = calcularXpForum();
+        return soma + xpForum;
 
         /*return this.conteudosConcluidos
                 .stream()

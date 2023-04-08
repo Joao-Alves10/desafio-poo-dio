@@ -40,13 +40,11 @@ public class Main {
         devCamila.progredir();
         Forum forum = new Forum();
         forum.setTopicos(3);
-        double resultado = devCamila.calcularXpForum(forum);
-        System.out.println("XP do Forum: " + resultado);
+        devCamila.setTopicos(forum);
         System.out.println("-");
         System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
         System.out.println("Conteúdos Concluídos Camila:" + devCamila.getConteudosConcluidos());
-        double somaXp = devCamila.calcularTotalXp() + resultado;
-        System.out.println("XP:" + somaXp );
+        System.out.println("XP:" + devCamila.calcularTotalXp());
         System.out.println("-------");
 
         Dev devJoao = new Dev();
@@ -57,14 +55,12 @@ public class Main {
         devJoao.progredir();
         devJoao.progredir();
         Forum forum2 = new Forum();
-        forum2.setTopicos(4);
-        double resultado2 = devJoao.calcularXpForum(forum2);
-        System.out.println("XP do Forum: " + resultado2);
+        forum2.setTopicos(2);
+        devJoao.setTopicos(forum2);
         System.out.println("-");
         System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
         System.out.println("Conteúdos Concluidos João:" + devJoao.getConteudosConcluidos());
-        double somaXp2 = devJoao.calcularTotalXp() + resultado2;
-        System.out.println("XP:" + somaXp2);
+        System.out.println("XP:" + devJoao.calcularTotalXp());
 
 
     }
